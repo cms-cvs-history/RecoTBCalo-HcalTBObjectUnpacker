@@ -10,6 +10,7 @@ process PROD  = {
                 untracked int32 HcalTriggerFED  = 1
                 untracked int32 HcalSlowDataFED = 3
                 untracked int32 HcalTDCFED = 5
+		untracked bool  IncludeUnmatchedHits = false
         }
 
 	module tbdump = HcalTBObjectDump {
@@ -19,5 +20,5 @@ process PROD  = {
 		untracked string fileName = 'Persist.root'
 	}
 
-	path p = { tbunpack, tbdump, out }
+	path p = { tbunpack, tbdump }
 }
